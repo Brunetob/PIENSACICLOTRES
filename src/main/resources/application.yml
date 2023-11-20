@@ -1,0 +1,22 @@
+server:
+  port: 8081
+error:
+include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://berry.db.elephantsql.com:5432/vmtdvsub?socketTimeout=3
+    username: vmtdvsub
+    password: 6yla6NThIuR-vcZ458J7a_fJUkDxaZbO
+    driverClassName: org.postgresql.Driver
