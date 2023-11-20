@@ -10,5 +10,5 @@ CREATE TABLE laser_measurements (
     measurement_id SERIAL PRIMARY KEY,
     device_id VARCHAR(255),
     distance DOUBLE PRECISION NOT NULL,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    FOREIGN KEY (device_id) REFERENCES laser_devices(device_id)
 );
